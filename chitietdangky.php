@@ -121,11 +121,11 @@ if ($result->num_rows > 0) {
             <?php endif; ?>
         </table>
         <?php if(count($hocPhanList) > 0): ?>
-            <button class="btn-pay" onclick="showPaymentForm()">Thanh toán</button>
+            <button class="btn-pay" onclick="showPaymentForm()">Lưu Đăng ký</button>
         <?php endif; ?>
 
         <div id="paymentForm" class="payment-form">
-            <h3>Thông Tin Thanh Toán</h3>
+            <h3>Thông Tin ĐĂNG KÝ</h3>
             <p><strong>Mã Sinh Viên:</strong> <?= $MaSV ?></p>
             <p><strong>Tên Sinh Viên:</strong> <?= $tenSV ?></p>
             <table>

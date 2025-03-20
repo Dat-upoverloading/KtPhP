@@ -10,16 +10,12 @@ if (!isset($_SESSION["MaSV"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["MaHP"])) {
     $MaSV = $_SESSION["MaSV"];
     $MaHP = $_POST["MaHP"];
-
-    // Tìm MaDK của sinh viên
     $sql = "SELECT MaDK FROM DangKy WHERE MaSV = '$MaSV'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $MaDK = $row["MaDK"];
-
-        // Xóa khỏi ChiTietDangKy
         $sqlDelete = "DELETE FROM ChiTietDangKy WHERE MaDK = '$MaDK' AND MaHP = '$MaHP'";
         if ($conn->query($sqlDelete) === TRUE) {
             echo "<script>alert('Xóa học phần thành công!'); window.location.href='chitietdangky.php';</script>";
