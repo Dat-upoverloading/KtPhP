@@ -80,8 +80,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="Hinh">Hình (URL):</label>
             <input type="text" name="Hinh" id="Hinh" value="<?= $row["Hinh"] ?>">
 
-            <label for="MaNganh">Ngành:</label>
-            <input type="text" name="MaNganh" id="MaNganh" value="<?= $row["MaNganh"] ?>" required>
+            <select name="MaNganh" id="MaNganh">
+                <option value="">-- Chọn ngành học --</option>
+                <option value="CNTT">Công nghệ thông tin</option>
+                <option value="QTKD">Quản Trị Kinh Doanh</option>
+            </select>
 
             <button type="submit">Cập Nhật</button>
         </form>

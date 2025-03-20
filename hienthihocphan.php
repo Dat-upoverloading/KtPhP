@@ -3,14 +3,10 @@ $server = "localhost";
 $username = "root";
 $password = "";
 $database = "Test1";
-
-// Kết nối database
 $conn = new mysqli($server, $username, $password, $database);
 if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
 }
-
-// Lấy danh sách học phần
 $sql = "SELECT * FROM HocPhan";
 $result = $conn->query($sql);
 ?>
@@ -46,6 +42,7 @@ $result = $conn->query($sql);
 </head>
 <body>
     <h2>Danh Sách Học Phần</h2>
+    <a href="index.php">Quay lại</a>
     <table border="1">
         <tr>
             <th>Mã HP</th>

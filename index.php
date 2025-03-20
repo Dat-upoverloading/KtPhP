@@ -26,7 +26,6 @@ include 'db_connect.php';
     <h2>Danh Sách Sinh Viên</h2>
 
     <?php
-    // Lấy danh sách sinh viên từ database
     $sql = "SELECT * FROM SinhVien";
     $result = $conn->query($sql);
     ?>

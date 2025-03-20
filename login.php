@@ -1,16 +1,13 @@
 <?php
 session_start();
 include 'db_connect.php';
-
-$error = ""; // Biến chứa lỗi
-
+$error = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $MaSV = $_POST["MaSV"];
     $sql = "SELECT * FROM SinhVien WHERE MaSV='$MaSV'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Lưu mã sinh viên vào session
         $_SESSION["MaSV"] = $MaSV;
         header("Location: index.php");
         exit();
